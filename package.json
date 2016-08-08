@@ -1,11 +1,12 @@
 {
-  "name": "project-template",
+  "name": "markdown-previewer",
   "version": "0.1.0",
-  "description": "This provides a template folder structure along with package.json and webpack.config files.",
-  "main": "index.js",
+  "description": "A Markdown previewer built with React.js and Sass.",
+  "main": "app.js",
   "dependencies": {
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "remarkable": "^1.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
@@ -14,7 +15,6 @@
     "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
-    "less-loader": "^2.2.3",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
@@ -30,5 +30,6 @@
     "type": "git",
     "url": "?.git"
   },
-  "author": "Steven Yearian"
+  "author": "Steven Yearian",
+  "license": "MIT"
 }

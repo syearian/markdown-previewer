@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var dev = process.env.NODE_ENV !== "production";
 
 module.exports = {
-	entry: './dist/app.js',
+	entry: './src/js/app.js',
 	output: {
 		path: dev ? "builds/development" : 'builds/production',
 		filename: 'app.js'
