@@ -1,7 +1,17 @@
 // Colors
-$backgroundColor: #262626;
+$bodyBgColor: #262626;
+$sectionBgColor: #FFFFFF;
 
 
 // Layout
-$grid: 12;
-$gutters: 1/3;
+$smallLayout: layout(100% 12 .25 fluid);
+$mediumContainer: 90%;
+$largecontainer: 65em;
+
+// Breakpoints
+$medium: 48em;
+$large: 68em;
+
+// Fonts
+$defaultFont: Lato, sans-serif;
+$headerFont: Oswald, sans-serif;
