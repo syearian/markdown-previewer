@@ -1,0 +1,8 @@
+.previewer {
+  @include span(12);
+  background-color: $sectionBgColor;
+  
+  @include breakpoint($medium) {
+    @include span(6 at 7);
+  }
+}
