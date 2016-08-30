@@ -1,11 +1,17 @@
 var webpack = require('webpack');
-var dev = process.env.NODE_ENV !== "production";
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+  template: __dirname + '/src/index.html',
+  filename: 'index.html',
+  inject: 'body'
+});
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-	entry: './src/js/app.js',
+	entry: './src/containers/Main.js',
 	output: {
-		path: dev ? "builds/development" : 'builds/production',
-		filename: 'app.js'
+		path: __dirname + '/build',
+		filename: 'bundle.js'
 	},
 	devServer: {
 		inline: true,
@@ -16,7 +22,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/,
-				exclude: /(node_modules)/,
+				include: __dirname + '/src',
 				loader: 'babel',
 				query: {
 					presets: ['react', 'es2015']
@@ -24,14 +30,20 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				loader: 'style-loader!css-loader!sass-loader'
-			}, 
-			{
-				test: /\.(png|jpg)$/,
-				loader: 'url-loader?limit=10000'
+				loader: ExtractTextPlugin.extract(
+						'style', // The backup style loader
+						'css?sourceMap!sass?sourceMap'
+				)
 			}
 	  ]
-	}
+	},
+	sassLoader: {
+			includePaths: [ 'src/sass' ]
+	},
+  plugins: [
+		HTMLWebpackPluginConfig,
+		new ExtractTextPlugin('[name].css')
+	]
 };
 
 
