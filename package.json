@@ -1,8 +1,20 @@
 {
   "name": "markdown-previewer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Markdown previewer built with React.js and Sass.",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syearian/markdown-previewer.git"
+  },
+  "author": "Steven Yearian",
+  "license": "ISC",
+  "homepage": "https://syearian.github.io/markdown-previewer",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --colors",
+    "prod": "webpack -p"
+  },
   "dependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
@@ -15,23 +27,13 @@
     "babel-preset-react": "^6.5.0",
     "breakpoint-sass": "^2.7.0",
     "css-loader": "^0.23.1",
-    "file-loader": "^0.8.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.7.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "susy": "^2.2.12",
-    "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
-  },
-  "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "?.git"
-  },
-  "author": "Steven Yearian",
-  "license": "MIT"
+  }
 }
