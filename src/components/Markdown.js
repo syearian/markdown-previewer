@@ -1,24 +1,21 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
-require('components/markdown');
 
-var Markdown = React.createClass( {
-  render: function() {
-    return (
-      <textfield
-        className=""
-        onChange={props.onChangeText}
-        placeholder='Enter Text'
-        type='text'
-        value={props.value}
-      ></textfield>
-    )	
-  }
-});
+function Markdown (props) {
+  return (
+    <textarea
+      onChange={props.onChangeText}
+      placeholder='Enter Text'
+      type='text'
+      value={props.value}
+    ></textarea>
+  );
+};
 
 Markdown.propTypes = {
   value: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired
 };
 
-module.exports('Markdown');
+module.exports = Markdown;

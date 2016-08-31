@@ -1,19 +1,18 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
-require('components/preview');
 
-var Preview = React.createClass( {
-  render: function() {
-    return (
-      <div>
-        {props.content}
-      </div>
-    )	
-  }
-});
+function Preview (props) {
+  return (
+    <div>
+      <p>preview</p>
+      {props.content}
+    </div>
+  );
+};
 
 Preview.propTypes = {
   content: PropTypes.string.isRequired
-}
+};
 
-module.exports('Preview');
+module.exports = Preview;
