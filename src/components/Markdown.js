@@ -7,7 +7,7 @@ function Markdown (props) {
       onChange={props.onChangeText}
       placeholder='Enter Text'
       type='text'
-      value={props.value}
+      value={props.inputText}
     ></textarea>
   );
 };
