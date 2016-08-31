@@ -1,9 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Markdown = require('./Markdown.js');
-var Preview = require('./Preview.js');
-
-require('main');
+var Markdown = require('../components/Markdown');
+var Preview = require('../components/Preview');
 
 var App = React.createClass( {
   getInitialState: function() {
@@ -20,10 +18,11 @@ var App = React.createClass( {
   render: function() {
     return (
       <div>
+        <h1>Markdown Previewer</h1>
         <Markdown value={this.state.value} onChangeText={this.handleChangeText} />
         <Preview content={this.state.value} />
       </div>
-    )	
+    );
   }
 });
 
