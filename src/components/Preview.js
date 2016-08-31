@@ -1,18 +1,17 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-
 function Preview (props) {
   return (
     <div>
       <p>preview</p>
-      {props.content}
+      <div dangerouslySetInnerHTML={props.outputText} ></div>
     </div>
   );
 };
 
 Preview.propTypes = {
-  content: PropTypes.string.isRequired
+  outputText: PropTypes.object.isRequired
 };
 
 module.exports = Preview;

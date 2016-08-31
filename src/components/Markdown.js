@@ -1,7 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
-
 function Markdown (props) {
   return (
     <textarea
@@ -14,7 +13,7 @@ function Markdown (props) {
 };
 
 Markdown.propTypes = {
-  value: PropTypes.string.isRequired,
+  inputText: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired
 };
 

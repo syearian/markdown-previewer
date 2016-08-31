@@ -2,16 +2,29 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Markdown = require('../components/Markdown');
 var Preview = require('../components/Preview');
+var marked = require('marked');
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitize: true,
+  smartLists: true,
+  smartypants: true
+});
 
 var App = React.createClass( {
   getInitialState: function() {
     return {
-      value: ''
+      inputText: '',
+      outputText: { __html: ''}
     };
   },
   handleChangeText: function(event) {
     this.setState({
-        value: event.target.value
+        markdownText: event.target.value,
+        outputText: { __html: marked(event.target.value)}
       }
     );
   },
@@ -19,8 +32,8 @@ var App = React.createClass( {
     return (
       <div>
         <h1>Markdown Previewer</h1>
-        <Markdown value={this.state.value} onChangeText={this.handleChangeText} />
-        <Preview content={this.state.value} />
+        <Markdown inputText={this.state.inputText} onChangeText={this.handleChangeText} />
+        <Preview outputText={this.state.outputText} />
       </div>
     );
   }
