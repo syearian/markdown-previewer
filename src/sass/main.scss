@@ -1,8 +1,8 @@
 @import "susy";
 @import "breakpoint";
 
-@import "variables";
-@import "mixins";
+@import "utils/variables";
+@import "utils/mixins";
 
-@import "base";
-@import "modules";
+@import "base/base";
+@import "layout/grid";
