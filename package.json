@@ -16,9 +16,9 @@
     "prod": "webpack -p"
   },
   "dependencies": {
+    "marked": "^0.3.6",
     "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "remarkable": "^1.6.2"
+    "react-dom": "^15.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",
