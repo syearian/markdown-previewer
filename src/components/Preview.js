@@ -4,7 +4,6 @@ var PropTypes = React.PropTypes;
 function Preview (props) {
   return (
     <div>
-      <p>preview</p>
       <div dangerouslySetInnerHTML={props.outputText} ></div>
     </div>
   );
