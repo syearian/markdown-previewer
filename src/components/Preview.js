@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+// require('../sass/components/markdown.scss');
 
 function Preview (props) {
   return (

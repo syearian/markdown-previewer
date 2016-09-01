@@ -1,5 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+require('../sass/main.scss');
 var Markdown = require('../components/Markdown');
 var Preview = require('../components/Preview');
 var marked = require('marked');
@@ -32,7 +33,6 @@ var App = React.createClass( {
     );
   },
   render: function() {
-    console.log(initialText.text);
     return (
       <div>
         <h1>Markdown Previewer</h1>

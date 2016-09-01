@@ -1,8 +1,11 @@
-@import "susy";
-@import "breakpoint";
+@import "~susy/sass/susy";
+@import "~breakpoint-sass/stylesheets/breakpoint";
 
 @import "utils/variables";
 @import "utils/mixins";
 
 @import "base/base";
-@import "layout/grid";
+@import "layouts/grid";
+
+@import "components/markdown";
+@import "components/preview";
