@@ -15,7 +15,7 @@ marked.setOptions({
   smartypants: true
 });
 var initialText = {
-  text: " # Remarkable\n# h1 Heading\n## h2 Heading\n### h3 Heading\n#### h4 Heading\n##### h5 Heading\n###### h6 Heading\n\n## Horizontal Rules\n\n___\n\n***\n\n***\n\nMarkdown -- awesome\n\n\"Smartypants, double quotes\"\n\n'Smartypants, single quotes'\n\n## Emphasis\n\n**This is bold text**\n\n__This is bold text__\n\n*This is italic text*\n\n_This is italic text_\n\n~~Deleted text~~\n\n## Blockquotes\n\n> Blockquotes can also be nested...\n>> ...by using additional greater-than signs right next to each other...\n> > > ...or with spaces between arrows.\n\n## Lists\n\nUnordered\n\n+ Create a list by starting a line with `+`, `-`, or `*`\n+ Sub-lists are made by indenting 2 spaces:\n  - Marker character change forces new list start:\n    * Ac tristique libero volutpat at\n    + Facilisis in pretium nisl aliquet\n    - Nulla volutpat aliquam velit\n+ Very easy!\n\nOrdered\n\n\n1. Lorem ipsum dolor sit amet\n2. Consectetur adipiscing elit\n3. Integer molestie lorem at massa\n\n## Links\n\n[link text](http://dev.nodeca.com)\n\n[link with title](http://nodeca.github.io/pica/demo/ 'title text!')\n\nAutoconverted link https://github.com/nodeca/pica"
+  text: "# h1 Heading\n## h2 Heading\n### h3 Heading\n#### h4 Heading\n##### h5 Heading\n###### h6 Heading\n\n## Horizontal Rules\n\n___\n\n***\n\n***\n\nMarkdown -- awesome\n\n\"Smartypants, double quotes\"\n\n'Smartypants, single quotes'\n\n## Emphasis\n\n**This is bold text**\n\n__This is bold text__\n\n*This is italic text*\n\n_This is italic text_\n\n~~Deleted text~~\n\n## Blockquotes\n\n> Blockquotes can also be nested...\n>> ...by using additional greater-than signs right next to each other...\n> > > ...or with spaces between arrows.\n\n## Lists\n\nUnordered\n\n+ Create a list by starting a line with `+`, `-`, or `*`\n+ Sub-lists are made by indenting 2 spaces:\n  - Marker character change forces new list start:\n    * Ac tristique libero volutpat at\n    + Facilisis in pretium nisl aliquet\n    - Nulla volutpat aliquam velit\n+ Very easy!\n\nOrdered\n\n\n1. Lorem ipsum dolor sit amet\n2. Consectetur adipiscing elit\n3. Integer molestie lorem at massa\n\n## Links\n\n[link text](http://dev.nodeca.com)\n\n[link with title](http://nodeca.github.io/pica/demo/ 'title text!')\n\nAutoconverted link https://github.com/nodeca/pica"
 }
 
 var App = React.createClass( {
@@ -34,10 +34,18 @@ var App = React.createClass( {
   },
   render: function() {
     return (
-      <div>
+      <div className="container">
         <h1>Markdown Previewer</h1>
-        <Markdown inputText={this.state.inputText} onChangeText={this.handleChangeText} />
-        <Preview outputText={this.state.outputText} />
+        <main>
+          <Markdown
+            className="markdown"
+            inputText={this.state.inputText}
+            onChangeText={this.handleChangeText} />
+          <Preview
+            className="preview"
+            outputText={this.state.outputText} />
+        </main>
+        <footer>Github repo: <a href='https://github.com/syearian/markdown-previewer'>https://github.com/syearian/markdown-previewer</a> </footer>
       </div>
     );
   }
