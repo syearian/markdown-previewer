@@ -23,7 +23,6 @@ a {
   @include breakpoint($medium) {
     @include container($mediumContainer);
     main {
-      // width: 100%;
       display: flex;
       justify-content: space-around;
     }
