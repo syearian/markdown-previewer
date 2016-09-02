@@ -4,13 +4,14 @@ var PropTypes = React.PropTypes;
 
 function Preview (props) {
   return (
-    <div>
+    <div className={props.className} >
       <div dangerouslySetInnerHTML={props.outputText} ></div>
     </div>
   );
 };
 
 Preview.propTypes = {
+  className: PropTypes.string.isRequired,
   outputText: PropTypes.object.isRequired
 };
 

@@ -5,6 +5,7 @@ var PropTypes = React.PropTypes;
 function Markdown (props) {
   return (
     <textarea
+      className={props.className}
       onChange={props.onChangeText}
       placeholder='Enter Text'
       type='text'
@@ -14,6 +15,7 @@ function Markdown (props) {
 };
 
 Markdown.propTypes = {
+  className: PropTypes.string.isRequired,
   inputText: PropTypes.string.isRequired,
   onChangeText: PropTypes.func.isRequired
 };
