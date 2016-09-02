@@ -7,10 +7,26 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $headerFont;
 }
 
-#app {
-  
+a {
+  text-decoration: none;
+}
+
+.container {
+  @include container($smallLayout);
+  &>h1, footer {
+    text-align: center;
+    color: $sectionBgColor;
+  }
+  footer {
+    margin: 20px;
+  }
   @include breakpoint($medium) {
     @include container($mediumContainer);
+    main {
+      // width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
   }
   @include breakpoint($large) {
     @include container($largecontainer);
